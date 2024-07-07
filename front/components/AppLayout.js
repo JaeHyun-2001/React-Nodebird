@@ -2,7 +2,7 @@
 import React, { Children } from 'react';
 import PropTypes from 'prop-types';
 import Link from 'next/link';
-import { Menu } from 'antd';
+import { Input, Menu, Row, Col } from 'antd';
 import Head from 'next/head';
 
 const AppLayout = ({ children }) => {
@@ -15,9 +15,17 @@ const AppLayout = ({ children }) => {
       <Menu mode="horizontal">
         <Menu.Item><Link href="/" legacyBehavior><a>노드버드</a></Link></Menu.Item>
         <Menu.Item><Link href="/profile" legacyBehavior><a>프로필</a></Link></Menu.Item>
+        <Menu.Item><Input.Search enterButton /></Menu.Item>
         <Menu.Item><Link href="/signup" legacyBehavior><a>로그인</a></Link></Menu.Item>
       </Menu>
-      {children}
+      <Row gutter={8}>
+        <Col xs={24} md={6}> 왼쪽 메뉴 </Col>
+        <Col xs={24} md={12}>{children}</Col>
+        <Col xs={24} md={6}> 
+        <a href="https://github.com/JaeHyun-2001" target="_blank" rel="noreferrer noopener">Made By JungMinSung </a>
+        </Col>
+      </Row>
+      
     </div>
   );
 };
