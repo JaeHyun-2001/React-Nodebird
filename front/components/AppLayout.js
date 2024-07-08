@@ -7,6 +7,7 @@ import Head from 'next/head';
 import UserProfile from '../components/UserProfile';
 import LoginForm from '../components/LoginForm';
 
+
 const AppLayout = ({ children }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   return (
@@ -28,7 +29,6 @@ const AppLayout = ({ children }) => {
         <a href="https://github.com/JaeHyun-2001" target="_blank" rel="noreferrer noopener">Made By JungMinSung </a>
         </Col>
       </Row>
-      
     </div>
   );
 };
