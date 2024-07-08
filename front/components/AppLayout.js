@@ -1,11 +1,14 @@
 // componenets/AppLayout.js
-import React, { Children } from 'react';
+import React, { Children, useState } from 'react';
 import PropTypes from 'prop-types';
 import Link from 'next/link';
 import { Input, Menu, Row, Col } from 'antd';
 import Head from 'next/head';
+import UserProfile from '../components/UserProfile';
+import LoginForm from '../components/LoginForm';
 
 const AppLayout = ({ children }) => {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   return (
     <div>
       <Head>
@@ -19,7 +22,7 @@ const AppLayout = ({ children }) => {
         <Menu.Item><Link href="/signup" legacyBehavior><a>로그인</a></Link></Menu.Item>
       </Menu>
       <Row gutter={8}>
-        <Col xs={24} md={6}> 왼쪽 메뉴 </Col>
+        <Col xs={24} md={6}> {isLoggedIn ? <UserProfile/> : <LoginForm/>} </Col>
         <Col xs={24} md={12}>{children}</Col>
         <Col xs={24} md={6}> 
         <a href="https://github.com/JaeHyun-2001" target="_blank" rel="noreferrer noopener">Made By JungMinSung </a>
