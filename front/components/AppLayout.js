@@ -23,10 +23,10 @@ const AppLayout = ({ children }) => {
         <Menu.Item><Link href="/signup" legacyBehavior><a>로그인</a></Link></Menu.Item>
       </Menu>
       <Row gutter={8}>
-        <Col xs={24} md={6}> {isLoggedIn ? <UserProfile/> : <LoginForm/>} </Col>
+        <Col xs={24} md={6}> {isLoggedIn ? <UserProfile setIsLoggedIn={setIsLoggedIn} /> : <LoginForm setIsLoggedIn={setIsLoggedIn} />} </Col>
         <Col xs={24} md={12}>{children}</Col>
-        <Col xs={24} md={6}> 
-        <a href="https://github.com/JaeHyun-2001" target="_blank" rel="noreferrer noopener">Made By JungMinSung </a>
+        <Col xs={24} md={6}>
+          <a href="https://github.com/JaeHyun-2001" target="_blank" rel="noreferrer noopener">Made By JungMinSung </a>
         </Col>
       </Row>
     </div>
