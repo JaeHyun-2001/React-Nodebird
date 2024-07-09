@@ -1,3 +1,4 @@
+// front/components/userProfile.js
 import React, { useCallback } from 'react';
 import { Avatar, Card, Button } from 'antd';
 
