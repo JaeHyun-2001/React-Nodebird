@@ -1,3 +1,4 @@
+// front/components/FollowList.js
 import { List, Button, Card } from 'antd';
 import ProTypes from 'prop-types';
 import { StopOutlined } from '@ant-design/icons';

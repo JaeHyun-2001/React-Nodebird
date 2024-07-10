@@ -33,7 +33,7 @@ const AppLayout = ({ children }) => {
   );
 };
 
-AppLayout.prototype = {
+AppLayout.PropTypes = {
   children: PropTypes.node.isRequired,  // prop가 제공되지 않을 때 경고 문구를 출력함
 };
 
