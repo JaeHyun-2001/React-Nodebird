@@ -10,18 +10,32 @@ import LoginForm from '../components/LoginForm';
 
 const AppLayout = ({ children }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  const items = [
+    {
+      label: (<Link href="/" legacyBehavior><a>노드버드</a></Link>),
+      key: 'title',
+    },
+    {
+      label: (<Link href="/profile" legacyBehavior><a>프로필</a></Link>),
+      key: 'profile',
+    },
+    {
+      label: (<Input.Search enterButton />),
+      key: 'search',
+    },
+    {
+      label: (<Link href="/signup" legacyBehavior><a>로그인</a></Link>),
+      key: 'signup',
+    },
+  ]
   return (
     <div>
       <Head>
         <meta charSet="utf-8" />
         <title>NodeBird</title>
       </Head>
-      <Menu mode="horizontal">
-        <Menu.Item><Link href="/" legacyBehavior><a>노드버드</a></Link></Menu.Item>
-        <Menu.Item><Link href="/profile" legacyBehavior><a>프로필</a></Link></Menu.Item>
-        <Menu.Item><Input.Search enterButton /></Menu.Item>
-        <Menu.Item><Link href="/signup" legacyBehavior><a>로그인</a></Link></Menu.Item>
-      </Menu>
+      <Menu mode="horizontal" items={items}></Menu>
       <Row gutter={8}>
         <Col xs={24} md={6}> {isLoggedIn ? <UserProfile setIsLoggedIn={setIsLoggedIn} /> : <LoginForm setIsLoggedIn={setIsLoggedIn} />} </Col>
         <Col xs={24} md={12}>{children}</Col>
